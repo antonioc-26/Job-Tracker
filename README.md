@@ -1,5 +1,7 @@
 # Job Tracker
 
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
+
 A lightweight web application for organizing and tracking job applications during the job search process.
 
 Users can add, edit, delete, and filter job applications while tracking their progress through different stages such as **Applied, Interview, Rejected, or Offer**.
