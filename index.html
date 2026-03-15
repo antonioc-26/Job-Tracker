@@ -1,0 +1,141 @@
+<!--
+===============================================================================
+Author: Antonio Corona
+Date: 2026-03-15
+Project: Job Tracker
+File: index.html
+
+Description:
+This file defines the user interface for the Job Tracker application.
+Users can add, edit, delete, and filter job applications. The page includes
+a dashboard summary, an application form, and a list of saved job entries.
+
+Technologies Used:
+HTML5 – page structure
+CSS3 – layout and styling
+JavaScript – application logic and localStorage persistence
+===============================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main application wrapper -->
+    <div class="app-container">
+
+        <!-- Page header -->
+        <header class="hero">
+            <h1>Job Tracker</h1>
+            <p>Track applications, update statuses, and organize your job search.</p>
+        </header>
+
+        <!-- Dashboard summary cards -->
+        <section class="dashboard">
+            <div class="card">
+                <h2>Total</h2>
+                <p id="total-count">0</p>
+            </div>
+
+            <div class="card">
+                <h2>Applied</h2>
+                <p id="applied-count">0</p>
+            </div>
+
+            <div class="card">
+                <h2>Interview</h2>
+                <p id="interview-count">0</p>
+            </div>
+
+            <div class="card">
+                <h2>Rejected</h2>
+                <p id="rejected-count">0</p>
+            </div>
+
+            <div class="card">
+                <h2>Offer</h2>
+                <p id="offer-count">0</p>
+            </div>
+        </section>
+
+        <!-- Form section for adding or editing a job application -->
+        <section class="form-section">
+            <h2>Add / Edit Application</h2>
+
+            <form id="job-form">
+                <input type="hidden" id="edit-id">
+
+                <div class="form-grid">
+                    <div>
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" required>
+                    </div>
+
+                    <div>
+                        <label for="role">Role Title</label>
+                        <input type="text" id="role" required>
+                    </div>
+
+                    <div>
+                        <label for="location">Location</label>
+                        <input type="text" id="location" required>
+                    </div>
+
+                    <div>
+                        <label for="status">Status</label>
+                        <select id="status" required>
+                            <option value="Applied">Applied</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Rejected">Rejected</option>
+                            <option value="Offer">Offer</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="date-applied">Date Applied</label>
+                        <input type="date" id="date-applied" required>
+                    </div>
+                </div>
+
+                <div class="notes-group">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" rows="4" placeholder="Add notes about the role, recruiter, interview, salary, or follow-up tasks..."></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="submit-btn">Save Application</button>
+                    <button type="button" id="cancel-edit-btn" class="secondary-btn">Cancel Edit</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Filter controls -->
+        <section class="filter-section">
+            <label for="filter-status">Filter by Status</label>
+            <select id="filter-status">
+                <option value="All">All</option>
+                <option value="Applied">Applied</option>
+                <option value="Interview">Interview</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Offer">Offer</option>
+            </select>
+        </section>
+
+        <!-- Application list -->
+        <section class="list-section">
+            <h2>Applications</h2>
+            <div id="job-list" class="job-list"></div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
