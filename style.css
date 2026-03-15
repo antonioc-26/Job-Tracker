@@ -171,6 +171,13 @@ button {
     border-radius: 12px;
     padding: 18px;
     background-color: #fafafa;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Subtle hover effect for better interactivity */
+.job-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.10);
 }
 
 .job-card h3 {
