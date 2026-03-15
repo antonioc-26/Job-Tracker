@@ -227,3 +227,43 @@ button {
         align-items: stretch;
     }
 }
+
+
+/*
+===============================================================================
+STATUS BADGES
+===============================================================================
+Colored labels used to visually represent the current status of a job
+application. Each status has a unique color for quick recognition.
+===============================================================================
+*/
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Applied status */
+.status-applied {
+    background-color: #2563eb;
+}
+
+/* Interview status */
+.status-interview {
+    background-color: #eab308;
+    color: #222;
+}
+
+/* Rejected status */
+.status-rejected {
+    background-color: #dc2626;
+}
+
+/* Offer status */
+.status-offer {
+    background-color: #16a34a;
+}
