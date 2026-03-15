@@ -8,6 +8,18 @@ The application stores all data locally in the browser using `localStorage`, so 
 
 ---
 
+## Screenshots
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard-screenshot.jpg)
+
+### Applications List
+
+![Applications](screenshots/job-list-screenshot.jpg)
+
+---
+
 ## Features
 
 - Add job applications
