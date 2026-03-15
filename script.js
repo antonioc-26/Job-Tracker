@@ -103,7 +103,14 @@ function renderJobs() {
         jobCard.innerHTML = `
             <h3>${job.company} — ${job.role}</h3>
             <p class="job-meta"><strong>Location:</strong> ${job.location}</p>
-            <p class="job-meta"><strong>Status:</strong> ${job.status}</p>
+            
+            <p class="job-meta">
+            <strong>Status:</strong>
+            <span class="status-badge status-${job.status.toLowerCase()}">
+            ${job.status}
+            </span>
+            </p>            
+
             <p class="job-meta"><strong>Date Applied:</strong> ${job.dateApplied}</p>
             <p class="job-notes"><strong>Notes:</strong><br>${job.notes || "None"}</p>
             <div class="job-actions">
