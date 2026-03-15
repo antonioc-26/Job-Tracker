@@ -89,6 +89,9 @@ function renderJobs() {
         filteredJobs = jobs.filter(job => job.status === selectedFilter);
     }
 
+    /* Show newest applications first based on date applied */
+    filteredJobs = filteredJobs.sort((a, b) => new Date(b.dateApplied) - new Date(a.dateApplied));
+
     jobList.innerHTML = "";
 
     if (filteredJobs.length === 0) {
