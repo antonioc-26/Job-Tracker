@@ -1,34 +1,50 @@
 # Job Tracker
 
-A simple web application for tracking job applications during the job search process.
+A lightweight web application for organizing and tracking job applications during the job search process.
 
-Users can add, edit, delete, and filter job applications while tracking their progress through different stages such as Applied, Interview, Rejected, or Offer.
+Users can add, edit, delete, and filter job applications while tracking their progress through different stages such as **Applied, Interview, Rejected, or Offer**.
 
-The application stores all data locally in the browser using `localStorage`, so application entries persist even after refreshing the page.
+All data is stored locally in the browser using the **localStorage API**, allowing applications to persist even after refreshing the page.
+
+---
+
+## Live Demo
+
+Try the application here:
+
+https://antonioc-26.github.io/Job-Tracker/
 
 ---
 
 ## Screenshots
 
 ### Dashboard
-
 ![Dashboard](screenshots/dashboard-screenshot.jpg)
 
 ### Applications List
-
 ![Applications](screenshots/job-list-screenshot.jpg)
 
 ---
 
 ## Features
 
-- Add job applications
+- Add new job applications
 - Edit existing applications
-- Delete applications
-- Track job status
+- Delete applications with confirmation
 - Filter applications by status
-- Dashboard summary of applications
-- Persistent data using localStorage
+- Dashboard summary of job search progress
+- Status color badges for quick visual tracking
+- Automatic sorting (newest applications first)
+- Persistent data using `localStorage`
+
+---
+
+## Status Types
+
+- Applied
+- Interview
+- Rejected
+- Offer
 
 ---
 
@@ -46,13 +62,6 @@ This provides a quick overview of the current job search progress.
 
 ---
 
-## Live Demo
-Play the games here:
-
-https://antonioc-26.github.io/Job-Tracker/
-
----
-
 ## Technologies Used
 
 - HTML5
@@ -62,26 +71,31 @@ https://antonioc-26.github.io/Job-Tracker/
 
 ---
 
-## Status Types
-
-- Applied
-- Interview
-- Rejected
-- Offer
+## Project Structure
+```
+job-tracker/
+├── LICENSE
+├── README.md
+├── index.html
+├── screenshots
+│   ├── dashboard-screenshot.jpg
+│   └── job-list-screenshot.jpg
+├── script.js
+└── style.css
+```
 
 ---
 
-## First Time Setup
+## Running the Project Locally
 
-Follow these steps to run the project locally.
+### Option 1 — Open Directly
 
-### 1. Clone the Repository
-    git clone https://github.com/antonioc-26/Job-Tracker.git
-    cd job-tracker
+1. Download or clone the repository
+2. Open `index.html` in any web browser
 
-Or download the ZIP from GitHub and extract it.
+No installation or dependencies are required.
 
---- 
+---
 
 ### 2. Open the Project in VS Code
 
@@ -118,35 +132,13 @@ Your browser will automatically open something similar to:
 
     http://127.0.0.1:5500/index.html
 
----
-
-### Live Reload
-
-When you edit and save any file such as:
-
-    CSS
-    JavaScript
-    HTML
-
-The browser will automatically refresh.
-
----
-
-## Project Structure
-```
-job-tracker/
-├── LICENSE
-├── README.md
-├── index.html
-├── script.js
-└── style.css
-```
+The page will automatically refresh when you edit and save files.
 
 ---
 
 ## Development
 
-If you plan to modify or add games:
+If you plan to modify or add:
 
 1. Run the project using Live Server
 2. Edit HTML/CSS/JavaScript files
