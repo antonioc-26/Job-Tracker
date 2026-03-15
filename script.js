@@ -150,7 +150,14 @@ function editJob(id) {
 }
 
 /* Delete a job by id, then persist and re-render the page */
+/* Delete a job by id after confirming the action with the user */
 function deleteJob(id) {
+    const confirmDelete = confirm("Are you sure you want to delete this application?");
+
+    if (!confirmDelete) {
+        return;
+    }
+
     jobs = jobs.filter(job => job.id !== id);
     saveJobs();
     updateDashboard();
