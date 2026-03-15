@@ -89,6 +89,9 @@ function renderJobs() {
         filteredJobs = jobs.filter(job => job.status === selectedFilter);
     }
 
+    /* Show newest applications first based on date applied */
+    filteredJobs = filteredJobs.sort((a, b) => new Date(b.dateApplied) - new Date(a.dateApplied));
+
     jobList.innerHTML = "";
 
     if (filteredJobs.length === 0) {
@@ -103,7 +106,14 @@ function renderJobs() {
         jobCard.innerHTML = `
             <h3>${job.company} — ${job.role}</h3>
             <p class="job-meta"><strong>Location:</strong> ${job.location}</p>
-            <p class="job-meta"><strong>Status:</strong> ${job.status}</p>
+            
+            <p class="job-meta">
+            <strong>Status:</strong>
+            <span class="status-badge status-${job.status.toLowerCase()}">
+            ${job.status}
+            </span>
+            </p>            
+
             <p class="job-meta"><strong>Date Applied:</strong> ${job.dateApplied}</p>
             <p class="job-notes"><strong>Notes:</strong><br>${job.notes || "None"}</p>
             <div class="job-actions">
@@ -140,7 +150,14 @@ function editJob(id) {
 }
 
 /* Delete a job by id, then persist and re-render the page */
+/* Delete a job by id after confirming the action with the user */
 function deleteJob(id) {
+    const confirmDelete = confirm("Are you sure you want to delete this application?");
+
+    if (!confirmDelete) {
+        return;
+    }
+
     jobs = jobs.filter(job => job.id !== id);
     saveJobs();
     updateDashboard();
